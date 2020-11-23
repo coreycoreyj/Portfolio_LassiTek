@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<!-- FontAwesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<!-- My CSS -->
+		<link rel="stylesheet" href="style.css" />
+		
+		<!-- chat App-->
+		<link rel="stylesheet" type="text/css" href="plugins/coreys_chat_app/css/cca_main.css">
+
+	</head>
+	<body>
+		<div class="container-fluid">
+			<header>
+				<div class="row">
+					<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top col-12">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<a class="navbar-brand" href="#"><img src="assets/T_logo1.png" width="30" height="30" alt=""> Corey's Portfolio </a>
+						</div>
+						<div id="myNavbar" class="collapse navbar-collapse ">
+							<ul class="navbar-nav w-100 nav-justified">
+								<li id="sec-intro" class="nav-item nav-link active" value="intro">Intro</li>
+								<li id="sec-skills" class="nav-item nav-link" value="skills" >Skills/Education</li>
+								<li id="sec-employoment" class="nav-item nav-link" value="employment">Employment</li>
+								<li id="sec-projects1" class="nav-item nav-link" value="projects1" >Projects 1</li>
+								<li id="sec-projects" class="nav-item nav-link" value="projects" >Projects 2</li>
+								<li id="sec-end" class="nav-item nav-link" value="end" >End</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<!--<div class="jumbotron masthead">Header</div>-->
+			</header>
+			<main>
+				<div id="sky" class="row">
+					<div class="cloud-area col-md-3">
+						<img id="sun" src="assets/sunx200.png" class="img-fluid">
+					</div>
+					<div class="cloud-area col-md-3">
+					</div>
+					<div class="cloud-area col-md-3">
+					</div>
+					<div class="cloud-area col-md-3">
+					</div>
+				</div>
+				<div id="ground" class="row">
+					<div id="corey">
+						<img id="corey_stand" src="assets/corey_walk.png" width="90">
+						<img id="corey_walk" src="assets/corey_walk1.png" width="90">
+					</div>
+					<div id="enemy">
+						<img id="enemy_stand" src="assets/koopa_stand.png" width="60">
+						<img id="enemy_walk" src="assets/koopa_walk.png" width="60">
+						<img id="enemy_shell" src="assets/koopa_shell.png" width="60">
+					</div>
+				</div>
+				<div id="chat-bubble" class="row">
+					<div class="col-md-2 col-sm-0 text-side"></div>
+					<div id="text-container" class="col-md-8 col-sm-12"></div>
+					<div class="col-md-2 col-sm-0 text-side"></div>
+				</div>
+				
+				<!-- Button to Open the Modal -->
+				<button id="open-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				Open modal
+				</button>
+				<!-- The Modal -->
+				<div class="modal fade" id="myModal">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+				  
+					<!-- Modal Header -->
+					<div class="modal-header">
+					  <h5 class="modal-title">This is a web application that I have been working on. Please sign in below and try it out. I used firebase, javascript, html, and css.
+								<br>Link to app: <a href="https://web-chat-application-corey.firebaseapp.com/" target="_blank">Text Message Web App</a> 
+								<br>Github code link: <a href="https://github.com/cjl014/Coreys-Text-Message-App/" target="_blank">github</a></h5>
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div id="chat_application"></div>
+					</div>
+					
+					<!-- Modal footer -->
+					<div class="modal-footer">
+					  
+					</div>
+					<button id="close-modal" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+				</div>
+			</main>
+		</div>	
+
+		<!-- Optional JavaScript -->
+		<script>
+			<!-- initialize and add the div id to the parameter -->
+			document.addEventListener("DOMContentLoaded", function(event){
+				var CoreysChatApp1 = new CoreysChatApp("chat_application", 
+				{  //add settings
+					"mainColor" : "linear-gradient(to right, lightslategrey, steelblue)",
+					"buttonColor" : "",
+					'chatWindowColor': '#f2f2f2',
+					'loaderImage': 'plugins/coreys_chat_app/images/loader.gif',
+					'sendMessageSound': 'plugins/coreys_chat_app/sounds/receive_msg.wav',
+					'receiveMessageSound': 'plugins/coreys_chat_app/sounds/send_msg.wav',
+					'attachmentImage': 'plugins/coreys_chat_app/images/img_attach1.png'
+				});			
+			});
+		</script>
+	
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+		<!-- GSAP GREENSOCK -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+		<!-- GSAP TextPlugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/TextPlugin.min.js"></script>
+		<!-- Add the FireBase JS script -->
+		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+		<!-- Add our JS file -->
+		<script src="plugins/coreys_chat_app/js/CoreysChatApp.js"></script>
+		<!-- My JS -->
+		<script src="js/myjs.js"></script>
+		
+
+	</body>
+</html>

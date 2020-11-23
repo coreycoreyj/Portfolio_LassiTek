@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+body {
+	overflow-x: hidden;
+	
+}
+ul {
+	margin-bottom: 5px !important;
+}
+
+.cloud {
+	position: absolute;
+	opacity: 0.7;
+	z-index: 1;
+}
+
+#ground {
+	width: 100%;
+	height: 130px; 
+	position: absolute;
+	bottom: 0; 
+	background-image: url('assets/brick5_bg.jpg'); 
+	box-shadow: -1px -12px 20px 0px rgb(51, 53, 49); 
+}
+
+#sun {
+	max-width: 200px; 
+	position: relative; 
+	top: 50px;
+}
+
+#sun, #corey, .speed-line {
+	opacity: 0;
+}
+
+#chat-bubble {
+	position: absolute;
+	z-index: 100;
+	margin: 0 auto;
+}
+
+#chat-bubble .text {
+	display: table;
+	width: 100%;
+	position: absolute;
+	margin: 0 auto !important;
+	padding: 38px 15px 0px 3% !important;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#chat-bubble .text h2{
+	font-size: 16px;
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+}
+
+#chat-bubble .text small{
+	font-size: 9px;
+	display: block;
+	font-weight: normal;
+	padding: 7px 0px;
+}
+
+#text-container{
+	padding-top: 1%;
+}
+
+#text-container:before {
+	content: "";
+    background-image: url("assets/chat_bubble2.png");
+    background-size: 100% 100%;
+    position: absolute;
+    width: 106%;
+	height: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+	left: -30px;
+	top: -15px;
+ 
+}
+
+.navbar {
+	opacity: 0;
+}
+
+.nav-link {
+	cursor: pointer;
+}
+
+.nav-link.active {
+	border-bottom: 2px solid lightseagreen !important;
+}
+
+.button.next {
+	animation-name: nextButton;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	background-size: 300% !important;
+	background: linear-gradient(to right, rgba(59,187,210,0.9) 85%, #82d4e3 90%, white 95%);
+	display: block;
+    margin: 8px auto;
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    padding: 10px 20px;
+    box-shadow: 4px 4px 7px #333131;
+    font-style: italic;
+}
+.button.next:hover{
+	cursor: pointer;
+}
+@keyframes nextButton {
+
+	0%  {background-position: 0% 0%;}
+    7%  {background-position: -100% 0%;}
+    100% {background-position: -100% 0%;}
+}
+
+#sky {
+	background: skyblue url('assets/bg_city.png') repeat-x 0px;
+	height: 100vh;
+	background-size: cover;
+}
+
+#corey {
+	margin: 0 auto; 
+	top: -126px; 
+	position: relative;
+}
+
+#corey_stand {
+	position: relative; 
+	top:2px;
+}
+
+#corey_walk {
+	opacity: 0;
+	position: relative;
+	top:2px; 
+	left:-94px;
+}
+#enemy {
+	position: absolute;
+	right: -188px;
+}
+#enemy_stand {
+	position: relative;
+	top: -74px;
+	opacity: 0;
+}
+#enemy_walk {
+	position: relative;
+	top: -74px;
+	left: -63px;
+	opacity: 0;
+}
+#enemy_shell {
+	position: relative;
+	top: -74px;
+	left: -127px;
+	opacity: 0;
+}
+
+#chat_application {
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+    margin: 0 auto;
+    display: block;
+}
+
+.cca_window {
+	height: calc(100% - 50px);
+}
+
+.cca_window_td {
+	background-color: white;
+}
+
+.cca_signupOrLogin {
+	background-color: transparent !important;
+	position: relative;
+	top: 25%;
+	padding-top: 0px !important;
+}
+
+.cca_auth {
+	background: linear-gradient(to right, lightslategrey, steelblue);
+	font-family: 'Josefin Sans', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+	max-width: 500px;
+    max-height: 300px;
+}
+	
+.cca_menu button:hover{
+	cursor: pointer;
+	opacity: 0.5;
+}
+.cca_chatbox button:hover{
+	cursor: pointer;
+	background-color: lightgreen;
+}
+.cca_signIn_btn:hover{
+	cursor: pointer;
+	background-color: lightblue;
+}
+.cca_signIn_btn {
+	font-size: 26px !important;
+	font-family: 'sans-serif';
+    font-style: italic;
+    box-shadow: 2px 2px 7px lightblue;
+
+}
+.cca_menu button, .cca_chatbox button{
+	font-weight: bold;
+}
+
+.cca_users_window{
+	background: linear-gradient(to right, dimgray 40%, #8a8a8a);
+}
+#open-modal, #close-modal {
+	display: none;
+}
+
+.modal-header .close {
+	margin-left: 0px;
+}
+
+.modal-header, .modal-footer {
+	border: none;
+}
+
+.modal-title {
+	margin: 0 auto;
+	color: darkslategray;
+	font-style: italic;
+	text-align: center;
+} 
+
+.modal-dialog {
+	max-width: 1200px;
+	width: 100%;
+}
+
+.modal-content {
+	background: url("assets/leaves-pattern.png");
+	border: 3px solid lightgray;
+}
+
+.modal-dialog, .modal-content {
+	height: 90vh;
+}
+
+.modal-body {
+	padding: 0px;
+}
+
+
+/** large desktop **/
+@media only screen and (min-width: 1200px) {
+	
+}
+
+
+/** medium laptop **/
+@media only screen and (max-width: 1199px) {
+	
+}
+
+/** small tablet **/
+@media only screen and (max-width: 992px) {
+	
+	#chat-bubble {
+		font-size: small;
+		padding-right: 10px;
+	}
+	#chat-bubble h2 {
+		font-size: medium;
+	}
+	#chat-bubble small {
+		font-size: xx-small !important;
+	}
+	
+	#ground {
+		height: 21px !important;
+	}
+	.cloud-area {
+		height: 0px;
+	}
+	#corey_stand, #corey_walk{
+		width: 50px;
+		top: 57px;
+	}
+	#corey_walk{
+		left: -54px;
+	}
+	#sky {
+		height: 90vh;
+	}
+}
+
+
+/** xsmall phone **/
+@media only screen and (max-width: 768px) {
+	
+	#chat_bubble {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	
+	#chat-bubble {
+		font-size: x-small;
+	}
+	.text-side {
+		display: none;
+	}
+}

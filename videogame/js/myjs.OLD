@@ -1,0 +1,460 @@
+"use strict";
+;(function(){
+	/** Global Variables **/
+	var body = document.body;
+	var skyElement = document.getElementById("sky");
+	var groundElement = document.getElementById("ground");
+	var menuElement = document.getElementsByClassName("navbar")[0];
+	var coreyElement = document.getElementById("corey");
+	var enemyElement = document.getElementById("enemy");
+	var textContainerElement = document.getElementById("text-container");
+	var city; //background object
+	var ground; //background object
+	var corey; //person object
+	var enemy; //enemy object
+	
+	var timeline = new TimelineMax();
+	
+	/** Start Animation Show **/
+	function start(){
+		
+		$(document).ready(function(){
+	
+			var cloud = new Cloud(120, 80, 300, 300, "assets/cloud6.png");
+			var cloud2 = new Cloud(140, 60, 300, 300, "assets/cloud11.png");
+			var chatBubble = new ChatBubble("chat-bubble");
+				
+			//Clouds
+			cloud.create(false, 0);
+			cloud2.create(false, 1);
+			cloud.create(false, 2);
+			cloud2.create(false, 3);
+	
+			//Nav Bar
+			timeline.to(".navbar", 1, {opacity: 1, delay: 0.1}, "navAndSun")
+			timeline.from(".navbar", 1, {scale: 0.05, ease: Back.easeInOut.config(0.8)}, "navAndSun");
+			
+			//Sun
+			timeline.from("#sun", 1, {y:-500, rotation:180, ease: Elastic.easeOut.config(1, 0.3)}, "navAndSun")
+			timeline.to("#sun", 0.5, {opacity: 1, onComplete:coreyWalk}, "navAndSun");
+			
+			//Corey
+			corey.speedLines();
+			timeline.from("#corey", 2, {x: -window.innerWidth / 2, ease: Power3.easeIn, onComplete:coreyStand}, "corey1")
+			timeline.to("#corey", 0.1, {opacity: 1}, "corey1");
+			
+			//Chat Bubble
+			chatBubble.create();
+			chatBubble.generateText(1);
+			
+			//Chat Text
+			timeline.from(textContainerElement, 1.5, { scaleY: 0, delay: 1, ease: Elastic.easeOut.config(1, 0.75)});
+		
+			
+			function coreyStand(){
+				corey.stand();
+			}
+			function coreyWalk(){
+				corey.walk(0.08);
+			}
+		});
+	}
+
+
+	
+	/** CHAT BUBBLE CLASS **/
+	class ChatBubble {
+		constructor(id){
+			this.id = id;
+			this.element = document.getElementById(id);
+		}
+		
+		create(){
+			var extraHeight = 60;
+			
+			if(window.innerHeight < 600){
+			}
+
+			this.element.style.width = "100%";
+			this.element.style.height = (window.innerHeight - groundElement.clientHeight - menuElement.clientHeight - coreyElement.clientHeight + extraHeight) + "px";
+			this.element.style.top = menuElement.clientHeight + "px"; 
+		}
+		
+		generateText(index){
+			var txt = '';
+			var delayTime;
+			var textClasses = 'text';
+			textContainerElement.innerHTML = '';
+			
+			if (index == 1){
+				txt += '<div class="' + textClasses + '"><ul style="text-align: left;margin-left: 30px"><h2>Hi! My name is Corey! <small class="badge badge-warning" style="font-size: small">*Please use desktop & Chrome before proceeding.</small></h2> This is a short portfolio that I developed to show a little more about me and my work. <br /> <li>I built this portfolio from scratch using HTML, Javascript, CSS, and libraries including Bootstrap, JQuery, and GreenSock. I will soon integrate this into a Wordpress theme.</li> <li>I live in Winston-Salem, North Carolina.</li><li>I am looking to work as a developer for a company.</li><li>I believe that my work ethic, efficiency, and reliability will be of good use for any company. </li><li>I worked in an agile environment with scrums & sprints. But I can also work very dependently.</li><li>I am a quick learner, detail-oriented and easy to work with.</li></ul>';
+			}
+			else if (index == 2){
+				txt += '<div class="' + textClasses + '"><h2>My skills include</h2> 4 professional years using HTML, CSS, JavaScript, JQuery & Linux. I have 4 unprofessional years using PHP, SQL, JQuery, JSON. I have experience using Wordpress, FileZilla, BootStrap, SASS, REST, Dreamweaver, Photoshop, Adobe XD, Gimp, MYQL, SQL Server Management Studio, Android Studio, PhoneGap, XML, CPanel/web hosting, IIS, Apache, Firebase, Greensock, & Oxwall. I am also teaching myself ReactJS now.<br> <a href="https://www.uncp.edu/" target="_blank" ><i class="fas fa-graduation-cap"></i></a>I graduated from the <a href="https://www.uncp.edu/" target="_blank" >University of North Carolina at Pembroke</a> in 2013. I have my Bachelor of Science degree in Information Technology. <br>'; 
+			}
+			else if (index == 3){
+				txt += '<div class="' + textClasses + '">I currently work at Bellomy Research as a Technical Operations Specialist. I have been there since May 2016 - for over 2 years.	Some responsibilities include: <ul><li>Programming online surveys, tables, charts, and modules on the client\'s portal website.</li><li>Developing the front-end for our community websites by the web designer\'s request.</li><li>Create/edit email templates with HTML.</li><li>Assisting with incoming support tickets, create and update documentation, monitor servers and restart services when necessary.</li></ul><b>Languages include:</b> Javascript, JSON, HTML, CSS, VBScript, slight ASP.NET, TML(tabular markup language)<br><br> I also worked at Moore Regional Hospital as a JavaScript Programmer for over 2 years: Nov 2013 – Dec 2015. I developed web-based physician order forms for the hospital and other various task. Physicians use them to order medicine, determine diagnosis, set up appointments, set up x-rays, determine wound care, and many other healthcare related things.<br>		<b>Languages included:</b> Javascript, HTML, CSS, VGR scripting(back-end), some JQuery, slight linux. &nbsp; &nbsp;';
+			}
+			else if (index == 4){
+				txt += '<div class="' + textClasses + '">Here are a few personal projects that I have been working on during my free time.  <ul><li>Ecommerce Wordpress website: <a href="https://icilee.com" target="_blank">icilee.com</a></li>    <li>Text Message App prototype using Firebase: <a href="https://web-chat-application-corey.firebaseapp.com/" target="_blank">Chat App</a> <span style="font-size: small">*currently updating with ReactJS, ES6 & features<span></li>    <li>Music/Beats showcase website: <a href="https://citybizbeats.com" target="_blank">CityBizBeats.com</a></li>    <li>Wordpress site for my borther\s business: <a href="https://fxglitch.000webhostapp.com/" target="_blank">FXGlitch</a></li>   <li>Wordpress site to report fake profiles: <a href="https://findfakeprofiles.com" target="_blank">FindFakeProiles.com</a></li>    <li>Music site built from scratch with HTML, PHP, JavaScript, SASS, JQuery: <a href="https://mycleanmusic.com" target="_blank">MyCleanMusic.com</a></li></ul>';
+			}
+			else if (index == 5){
+				txt += '<div class="' + textClasses + '"><h2>The End!</h2> Thank you for for walking with me! I hope you enjoyed. Here are some extra links just in case you would like to view them.   <ul><li>Linkedin: <a href="https://linkedin.com/in/corey-lassiter-b5703172/" target="_blank">linkedin.com/in/corey-lassiter-b5703172/</a></li>    <li>GitHub: <a href="https://github.com/cjl014" target="_blank">github.com/cjl014</a></li>    <li>Email: COREYUNCP@GMAIL.COM</li></ul>';
+			}
+			
+			// If it is the END, hide 'continue' button. If not, show button.
+			if (currentMenu().getAttribute('value') == "end"){
+				txt += '<button class="button" style="display: none">Continue</button></div>';
+			}
+			else
+				txt += '<button class="button">Continue</button></div>';
+			
+			
+			if (index == 1){
+				delayTime = 5;
+			}
+			else {
+				delayTime = 0;
+			}
+			
+			//replaces word-by-word because the delimiter is "" (a space)
+			TweenLite.to(textContainerElement, 8, {text:{value: txt, delimiter: ""}, delay: delayTime, ease:Linear.easeNone, onComplete: setNextButtonListener });
+			
+		}
+	}
+	
+	
+	
+	/** PERSON CLASS **/
+	class Person {
+		constructor(){
+			this.movement = "";
+		}
+		
+		walk(speed){
+			var that = this;
+			this.movement = "walk";
+			
+			animate();
+
+			function animate(){
+				if(that.movement == "walk"){
+					TweenMax.to("#corey_stand", 0.001, {opacity:0, delay: speed});
+					TweenMax.to("#corey_walk", 0.001, {opacity:1, delay: speed});
+					
+					TweenMax.to("#corey_stand", 0.001, {opacity:1, delay: speed*2});
+					TweenMax.to("#corey_walk", 0.001, {opacity:0, delay: speed*2, onComplete:animate});
+				}
+			}	
+		}
+		jump(){
+			TweenMax.to("#corey_stand", 0.001, {alpha:0, delay: 0.1});
+			TweenMax.to("#corey_walk", 0.001, {alpha:1, delay: 0.1});
+			TweenMax.to("#corey", 0.2, {y: -100, ease:Linear.easeNone});
+			TweenMax.to("#corey", 0.2, {y: -60, delay: 0.2, ease:Linear.easeNone});
+			TweenMax.to("#corey", 0.2, {y: -100, delay: 0.4, ease:Linear.easeNone});
+			TweenMax.to("#corey", 0.2, {y: 0, delay: 0.6, ease:Linear.easeNone});
+			TweenMax.to("#corey_stand", 0.001, {alpha:1, delay: 0.6});
+			TweenMax.to("#corey_walk", 0.001, {alpha:0, delay: 0.6});
+		}
+		stand(){
+			this.movement = "stand";
+			city.stop();
+			ground.stop();
+		}
+		
+		speedLines(){
+			var line;
+			var amount = 4;
+			var x = 0;
+			var y = 0;
+			var lineSpacing;
+			var lineThickness;
+			
+			//smaller screens
+			if (window.innerWeight < 992){
+				lineSpacing = 15;
+				lineThickness = 1;
+				x = -90;
+			}
+			else{
+				lineSpacing = 50;
+				lineThickness = 1.4;
+				x = -50;
+			}
+			
+			for(var i=0; i<amount ; i++){
+				y -= lineSpacing; 
+				line = document.createElement('div');
+			
+				line.style.width = "100px";
+				line.style.height = lineThickness + "px";
+				line.style.backgroundColor = "lightblue";
+				line.style.position = "relative";
+				line.style.top = y + "px";
+				line.style.left = x + "px";
+				line.className = "speed-line";
+				
+				coreyElement.append(line);
+				
+				TweenMax.to(line, 0.1, {opacity: 1, delay: 2.1});
+				TweenMax.to(line, 0.8, {repeat: 0, x: -100, opacity: 0, delay: 2.2});
+				
+			}
+		}
+	}
+	
+	
+	class Enemy {
+		constructor(x, y, width, height){
+			this.movement = "";
+			this.x = window.innerWidth;
+			
+		}
+		
+		walk(speed){
+			var that = this;
+			this.movement = "walk";
+			
+			animate();
+			TweenMax.to("#enemy", 4, {x: (-window.innerWidth / 2) + (coreyElement.clientWidth / 4) - 128, ease: Linear.easeNone, onComplete: function(){enemy.stand()}});
+			TweenMax.to("#enemy_stand", 0.001, {opacity: 0, ease: Linear.easeNone, delay: 4.21});
+			TweenMax.to("#enemy_walk", 0.001, {opacity: 0, ease: Linear.easeNone, delay: 4.21});
+			TweenMax.to("#enemy_shell", 0.001, {opacity: 1, ease: Linear.easeNone, delay: 4.21});
+			TweenMax.to("#corey", 3.5, {onComplete: function(){ corey.jump()}});
+			TweenMax.to("#enemy", 4, {x: -5000, ease: Linear.easeNone, delay: 4.25});
+			
+			function animate(){
+				if(that.movement == "walk"){
+					
+					
+					TweenMax.to("#enemy_stand", 0.001, {opacity:0, delay: speed});
+					TweenMax.to("#enemy_walk", 0.001, {opacity:1, delay: speed});
+					
+					TweenMax.to("#enemy_stand" , 0.001, {opacity:1, delay: speed*2});
+					TweenMax.to("#enemy_walk", 0.001, {opacity:0, delay: speed*2, onComplete:animate});
+				}
+			}	
+		}
+		
+		stand(){
+			this.movement = "stand";
+		}
+	}
+	
+	/** BACKGROUND CLASS **/
+	class Background{
+		constructor(id){
+			this.id = id;
+			this.element = document.getElementById(id);
+			this.x = 0;
+		}
+		
+		scroll(speed){
+			var that = this;
+			var speed = speed;
+			
+			animate();
+
+			function animate(){
+				TweenMax.to(that.element, 0.001, {backgroundPositionX: that.x + "px", ease: Linear.easeNone, onComplete:animate});
+				that.x += speed;
+			}	
+		}
+		
+		stop(){
+			TweenMax.killTweensOf(this.element);
+		}
+	}		
+
+	
+
+	/** OBJECT CLASS **/
+	class Object{
+		constructor(w, h, x, y, src){
+			this.width = w;
+			this.height = h;
+			this.x = x;
+			this.y = y;
+			this.src = src;
+		}
+		
+		create(flip){
+	
+		}
+		move(obj){
+		
+			var objX = $(obj).position().left;
+			var counter = 0;
+			
+			//obj.style.transform = "translate(" + 1 + ")";
+			TweenMax.ticker.addEventListener("tick", function(event){
+				obj.style.transform = "translate(" + counter + "px)";
+				counter -= 0.2;
+	
+				if((-objX + -obj.width) > counter){
+					counter = window.innerWidth - objX;
+					obj.style.transform = "translate(2000px)";
+				
+				}
+			});
+		}
+	}
+	
+	class Cloud extends Object {
+		constructor(w, h, x, y, src) {
+			super(w, h, x, y, src);
+		}
+		
+		create(flip, cloudArea){
+			var that = this;
+			var image = new Image();
+			var cloudArea = $(".cloud-area").eq(cloudArea);
+			
+			image.src = this.src;
+			image.className = "cloud";
+			image.width = this.width;
+			image.height = this.height;
+			image.style.left = (getRandomNum(cloudArea.position().left, (cloudArea.position().left + cloudArea.width()) - image.width) + "px");
+			image.style.top = (getRandomNum(menuElement.clientHeight, skyElement.clientHeight - groundElement.clientHeight -image.height - 200)) + "px";
+			
+			//flip image
+			if(flip){ 
+				image.style.transform = "scaleX(-1)";
+			}
+			
+			//append to html
+			image.onload = function(){
+				skyElement.prepend(image);
+				that.move(image);
+			}
+		}
+	}
+
+	function setMenuListener() {
+		
+		var chatBubble = new ChatBubble("chat-bubble");
+		var menu_intro = document.getElementById("sec-intro");
+		var menu_skills = document.getElementById("sec-skills");
+		var menu_employoment = document.getElementById("sec-employoment");
+		var menu_projects = document.getElementById("sec-projects");
+		var menu_end = document.getElementById("sec-end");
+		
+		
+		menu_intro.addEventListener("click", function(){
+			timeline.play("corey1");
+			corey.walk(0.08);
+			currentMenu().classList.remove("active");
+			menu_intro.className += menu_intro.className + " active";
+		});
+		
+		menu_skills.addEventListener("click", function(){
+			chatBubble.generateText(2);
+			//timeline.play("skills");
+			corey.walk(0.08);
+			currentMenu().classList.remove("active");
+			menu_skills.className += menu_skills.className + " active";
+		});
+		
+		menu_employoment.addEventListener("click", function(){
+			chatBubble.generateText(3);
+			//timeline.play("employment");
+			corey.walk(0.08);
+			currentMenu().classList.remove("active");
+			menu_employoment.className += menu_employoment.className + " active";
+		});
+		
+		menu_projects.addEventListener("click", function(){
+			chatBubble.generateText(4);
+			//timeline.play("projects");
+			corey.walk(0.08);
+			currentMenu().classList.remove("active");
+			menu_projects.className += menu_projects.className + " active";
+		});
+		
+		menu_end.addEventListener("click", function(){
+			chatBubble.generateText(5);
+			//timeline.play("end");
+			corey.walk(0.08);
+			currentMenu().classList.remove("active");
+			menu_employoment.className += menu_employoment.className + " active";
+		});
+		
+	}
+	
+	
+	function setNextButtonListener() {
+	
+		var chatBubble = new ChatBubble();
+		var button = document.getElementsByClassName("button")[0];
+		var menu_intro = document.getElementById("sec-intro");
+		var menu_skills = document.getElementById("sec-skills");
+		var menu_employoment = document.getElementById("sec-employoment");
+		var menu_projects = document.getElementById("sec-projects");
+		var menu_end = document.getElementById("sec-end");
+		var walkDuration = 3;
+		var textIndex;
+
+		button.onclick = function(){
+			animation(currentMenu().getAttribute('value'));
+		}
+		
+		function animation(menu) {
+			
+			currentMenu().classList.remove("active");
+			
+			if(menu == "intro") {
+				menu_skills.className += menu_skills.className + " active";
+				textIndex = 2;
+			}
+			else if (menu == "skills") {
+				menu_employoment.className += menu_employoment.className + " active";
+				enemy.walk(0.1);
+				textIndex = 3;
+			}
+			else if (menu == "employment") {
+				menu_projects.className += menu_projects.className + " active";
+				textIndex = 4;
+			}
+			else if (menu == "projects") {
+				menu_end.className += menu_end.className + " active";
+				textIndex = 5;
+			}
+				
+			TweenMax.to(textContainerElement, 1, {opacity: 0, scaleY: 0});
+			
+			corey.walk(0.3);
+			city.scroll(-0.2);
+			ground.scroll(-1);
+			setTimeout(nexAnimation, walkDuration * 1000);
+		}
+		
+		
+		function nexAnimation(){
+			corey.stand();
+			chatBubble.generateText(textIndex);
+			
+			TweenMax.to(textContainerElement, 1.5, { scaleY: 1, ease: Elastic.easeOut.config(1, 0.75)});
+			TweenMax.to(textContainerElement, 1, {opacity: 1});
+			
+		}
+	}
+	
+	function currentMenu(){
+		var currentMenu = document.querySelector(".nav-item.nav-link.active");
+		
+		return currentMenu;
+	}
+	
+	function getRandomNum(min, max) {
+		return Math.random() * (max - min) + min;
+	}
+	
+	city = new Background("sky");
+	ground = new Background("ground");
+	corey = new Person();
+	enemy = new Enemy();
+	
+	start();
+	
+})();

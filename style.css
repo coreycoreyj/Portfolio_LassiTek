@@ -1,0 +1,238 @@
+
+#welcomeText1, #welcomeText2, #intro-button{
+  opacity: 0;
+}
+.scroller{
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 82px;
+}
+section{
+  min-height: 100vh;
+  background-attachment: fixed;
+  padding-bottom: 100px;
+}
+section .row:last-of-type {
+  margin-top:50px;
+}
+#intro{
+  background-image: linear-gradient(to bottom right, lightblue, white);
+  padding-top: 100px;
+}
+section h1{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-weight: bold !important;
+}
+#skills h1{
+  color: mediumturquoise;
+}
+#skills .row:nth-last-of-type(3){
+  margin-bottom: 100px;
+}
+.skill-circle{
+  width: 100px;
+  height: 100px;
+}
+.skill-circle circle{
+  opacity: 0;
+  cx: 50;
+  cy: 50;
+  r: 40;
+  stroke: gold;
+  stroke-width: 15;
+  fill: transparent;
+}
+.navbar{
+  background-image: linear-gradient(to bottom right,  #343A40 , slateblue);
+}
+#skills{
+  /*background-image: linear-gradient(to bottom right,  #343A40 , #171a1c );*/
+  background-image: linear-gradient(to bottom right,  #33334d , #171a1c );
+}
+.skill-year{
+  font-weight: bold;
+  opacity: 0;
+}
+.skill-level{
+  color: rgb(204, 224, 231);
+  font-weight: bold;
+  font-size: 18px;
+  opacity: 0;
+}
+#skills h2{
+  font-style: italic;
+  opacity: 0;
+}
+.skill-html h2{
+  color: skyblue;
+}
+.skill-css h2{
+  
+  color: lightcyan;
+}
+.skill-js h2{
+  color: palevioletred;
+}
+.skill-react h2{
+  color: dodgerblue;
+}
+.skill-jquery h2{
+  color: orangered;
+}
+.skill-php h2{
+  color: yellow;
+}
+.skill-wordpress h2{
+  color: steelblue;
+}
+.skill-bootstrap h2{
+  color: mediumpurple;
+}
+.skill-rest h2{
+  color: aquamarine;
+}
+#projects{
+  background-image: linear-gradient(to bottom right, lightblue, white);
+}
+#projects h2{
+  color: rebeccapurple;
+}
+#projects .card{
+  width: 400px;
+  margin: 0 auto 30px auto;
+  opacity: 0;
+}
+#projects .card-header{
+  height: 225px;
+  background-size: cover;
+  background-position: center;
+}
+#projects .card-body{
+  height: 241px;
+}
+
+#education{
+   position: relative;
+   border-top: gray solid 4px;
+}
+#education::after{
+  content: "";
+  display: block;
+  background-image: url('images/uncp_dorm.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.4;
+  width: 100%;
+  min-height: 150vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.edu-info, #edu-button{
+  opacity: 0;
+}
+
+#employment{
+  position: relative;
+  border-top: gray solid 4px;
+  background-image: linear-gradient(to bottom right, rgb(8, 54, 70), white);
+}
+#employment::after{
+  content: "";
+  display: block;
+  background-image: url('images/employment.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  opacity: 0.4;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#employment .card-header{
+  font-size: 35px;
+}
+
+#references{
+  background-image: linear-gradient(to bottom right, lightblue, white);
+}
+#references .card{
+  max-width: 400px;
+  margin: 0 auto 10px auto;
+  opacity: 0;
+}
+#references .card-header{
+  height: 225px;
+  background-size: cover;
+  background-position: center;
+}
+#references .card-body{
+  height: auto;
+}
+
+#tools{
+  border-top: gray solid 4px;
+  background-image: linear-gradient(to bottom right, lightblue, white);
+}
+
+#end{
+  border-top: gray solid 4px;
+  background-image: linear-gradient(to bottom right, rgb(233, 208, 235), rgb(255, 255, 255));
+}
+#end-img-container{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+footer{
+  height: 150px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.prof_img{
+  width: 180px;
+}
+.btn{
+  font-size: 20px;
+  font-weight: bold;
+}
+.letter{
+  display: inline-block;
+}
+.fas{
+  color: cornflowerblue;
+}
+.modal-title, .modal-footer{
+  margin: 0 auto;
+}
+.modal .close{
+  margin-left: 0px;
+}
+#graduation{
+  max-width: 200px;
+}
+table td{
+  color: mediumblue;
+}
+
+
+/** Medium devices (tablets, 768px and below)**/
+@media (max-width: 768px) { 
+  #welcomeText1, #welcomeText2{
+    font-size:20px !important;
+  }
+  .modal-title, #education h2{
+    font-size:35px !important;
+  }
+  .card{
+    width: 100% !important;
+  }
+  .card .btn{
+    font-size: 16px;
+  }
+}
