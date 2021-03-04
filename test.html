@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+    <script>
+        const data = {"test1": "hi", "test2": "bye"};
+        url = "https://script.google.com/macros/s/AKfycbwg2fukQs3vb9SkObg9VhP8I7ckWmDyRihuJxXFjPwPhHrqdk4/exec";
+        //url = "https://lassitek.com/api.php";
+        body = JSON.stringify(data);
+
+        fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: body
+        }).then(response => response.json())
+        .then(res => {
+            console.log(res);
+        })
+        .catch((err, a) => {
+            console.log("Error:" + err);
+            console.log(a);
+          
+        });
+        
+    </script>
+</body>
+</html>

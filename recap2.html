@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script>
+            fetch("https://cors-anywhere.herokuapp.com/https://www.springwaterstudio.com/recaptcha-test.php", {
+                method: "POST",
+                body: JSON.stringify({"submit" : "test", "test" : "test"}),
+                
+            })
+            .then(res=>{
+                console.log(res);
+            })
+        
+        </script>
+    </head>
+</html>

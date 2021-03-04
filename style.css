@@ -1,11 +1,22 @@
-
+body {
+  overflow-x: hidden;
+}
 #welcomeText1, #welcomeText2, #intro-button{
   opacity: 0;
+  position: relative;
+  z-index: 1;
 }
 .scroller{
   height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-padding: 82px;
+}
+.particle {
+  width: 7px;
+  height: 7px;
+  background: #f6eeff;
+  border-radius: 100px;
+  opacity: 0.6;
 }
 section{
   min-height: 100vh;
@@ -16,8 +27,8 @@ section .row:last-of-type {
   margin-top:50px;
 }
 #intro{
-  background-image: linear-gradient(to bottom right, lightblue, white);
   padding-top: 100px;
+  background: linear-gradient(to bottom right, lightblue, white);
 }
 section h1{
   padding-top: 50px;
@@ -44,11 +55,11 @@ section h1{
   fill: transparent;
 }
 .navbar{
-  background-image: linear-gradient(to bottom right,  #343A40 , slateblue);
+  background: linear-gradient(to bottom right,  #343A40 , slateblue);
 }
 #skills{
-  /*background-image: linear-gradient(to bottom right,  #343A40 , #171a1c );*/
-  background-image: linear-gradient(to bottom right,  #33334d , #171a1c );
+  /*background: linear-gradient(to bottom right,  #343A40 , #171a1c );*/
+  background: linear-gradient(to bottom right,  #33334d , #171a1c );
 }
 .skill-year{
   font-weight: bold;
@@ -93,7 +104,7 @@ section h1{
   color: aquamarine;
 }
 #projects{
-  background-image: linear-gradient(to bottom right, lightblue, white);
+  background: linear-gradient(to bottom right, lightblue, white);
 }
 #projects h2{
   color: rebeccapurple;
@@ -137,7 +148,7 @@ section h1{
 #employment{
   position: relative;
   border-top: gray solid 4px;
-  background-image: linear-gradient(to bottom right, rgb(8, 54, 70), white);
+  background: linear-gradient(to bottom right, rgb(8, 54, 70), white);
 }
 #employment::after{
   content: "";
@@ -159,7 +170,7 @@ section h1{
 }
 
 #references{
-  background-image: linear-gradient(to bottom right, lightblue, white);
+  background: linear-gradient(to bottom right, lightblue, white);
 }
 #references .card{
   max-width: 400px;
@@ -177,16 +188,40 @@ section h1{
 
 #tools{
   border-top: gray solid 4px;
-  background-image: linear-gradient(to bottom right, lightblue, white);
+  background: linear-gradient(to bottom right, lightblue, white);
 }
 
 #end{
   border-top: gray solid 4px;
-  background-image: linear-gradient(to bottom right, rgb(233, 208, 235), rgb(255, 255, 255));
+  background: linear-gradient(to bottom right, rgb(233, 208, 235), rgb(255, 255, 255));
 }
 #end-img-container{
-  max-width: 500px;
+  max-width: 275px;
   margin: 0 auto;
+}
+#trophy {
+  max-width: 200px;
+}
+#partyBall, #trophy {
+  opacity: 0.8;
+}
+
+#contactForm {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, rgb(182 152 184), rgb(250 250 250));
+}
+#contactForm .col {
+  margin-bottom: 20px;
+}
+#contactForm textarea {
+  width: 100%;
+}
+#submit {
+  background: #2e373b;
 }
 
 footer{
@@ -218,6 +253,12 @@ footer{
 }
 table td{
   color: mediumblue;
+}
+
+.asterisk {
+  position: absolute;
+  left: 10px;
+  top: -2px;
 }
 
 
