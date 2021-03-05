@@ -9,6 +9,120 @@
     welcomeText1.innerHTML = welcomeText1.textContent.replace(/([^\x00-\x80]|\w|[!]|[.]|[']|[,])/g, "<span class='letter'>$&</span>");
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     const projects = {
+      aep: {
+        title: 'AepInsightPanel.com',
+        description: '',
+        images: [
+          {
+            url: 'images/aep/aep1.png',
+            label: '',
+            description: '',
+            alt: 'AEP home page'
+          },
+          {
+            url: 'images/aep/aep2.png',
+            label: '',
+            description: '',
+            alt: 'AEP page'
+          },
+          {
+            url: 'images/aep/aep3.png',
+            label: '',
+            description: '',
+            alt: 'AEP mobile page'
+          },
+          {
+            url: 'images/aep/aep4.png',
+            label: '',
+            description: '',
+            alt: 'AEP page'
+          }
+        ]
+      },
+      bazinga: {
+        title: 'BAZINGA!',
+        description: '',
+        images: [
+          {
+            url: 'images/bazinga/bazinga1.png',
+            label: '',
+            description: '',
+            alt: 'BAZINGA home page'
+          },
+          {
+            url: 'images/bazinga/bazinga2.png',
+            label: '',
+            description: '',
+            alt: 'BAZINGA page'
+          },
+          {
+            url: 'images/bazinga/bazinga3.png',
+            label: '',
+            description: '',
+            alt: 'BAZINGA survey template'
+          },
+          {
+            url: 'images/bazinga/bazinga4.png',
+            label: '',
+            description: '',
+            alt: 'BAZINGA email template'
+          }
+        ]
+      },
+      checkers: {
+        title: 'ReactJS Checkers',
+        description: '',
+        images: [
+          {
+            url: 'images/react_js_checkers/menu.png',
+            label: '',
+            description: '',
+            alt: 'Main Menu'
+          },
+          {
+            url: 'images/react_js_checkers/gameplay1.png',
+            label: '',
+            description: '',
+            alt: 'Gameplay 1'
+          },
+          {
+            url: 'images/react_js_checkers/gameplay2.png',
+            label: '',
+            description: '',
+            alt: 'Gameplay 2'
+          }
+        ]
+      },
+      citybizbeats: {
+        title: 'CityBizBeats.com',
+        description: '',
+        images: [
+          {
+            url: 'images/citybizbeats/home.png',
+            label: '',
+            description: '',
+            alt: 'Home page'
+          },
+          {
+            url: 'images/citybizbeats/tracklist.png',
+            label: '',
+            description: '',
+            alt: 'Home page tracklist'
+          },
+          {
+            url: 'images/citybizbeats/checkout.png',
+            label: '',
+            description: '',
+            alt: 'Checkout page'
+          },
+          {
+            url: 'images/citybizbeats/lease.png',
+            label: '',
+            description: '',
+            alt: 'Lease page'
+          }
+        ]
+      },
       entergypluggedin: {
         title: 'EntergyPluggedIn.com',
         description: '',
@@ -33,139 +147,45 @@
           }
         ]
       },
-    jcpenney: {
-        title: 'JCPenneyInsiders.com',
+      FFP: {
+        title: 'FindFakeProfiles.com',
         description: '',
         images: [
           {
-            url: 'images/jcpenney/jcpenney1.png',
+            url: 'images/ffp/FFP_home3.png',
             label: '',
             description: '',
-            alt: 'JCPenney home page'
+            alt: 'home page'
           },
           {
-            url: 'images/jcpenney/jcpenney2.png',
+            url: 'images/ffp/ffp_david.png',
             label: '',
             description: '',
-            alt: 'JCPenney points page'
-          }
-        ]
-      },
-      mycleanmusic: {
-        title: 'MyCleanMusic.com',
-        description: '',
-        images: [
-          {
-            url: 'images/mycleanmusic/home_page.png',
-            label: '',
-            description: '',
-            alt: 'MyCleanMusic landing page'
+            alt: 'reported profile page'
           },
           {
-            url: 'images/mycleanmusic/songs_page.png',
+            url: 'images/ffp/ffp_comments.png',
             label: '',
             description: '',
-            alt: 'MyCleanMusic songs page'
-          }
-        ]
-      },
-    aep: {
-        title: 'AepInsightPanel.com',
-        description: '',
-        images: [
-          {
-            url: 'images/aep/aep1.png',
-            label: '',
-            description: '',
-            alt: 'AEP home page'
+            alt: 'post comments'
           },
           {
-            url: 'images/aep/aep2.png',
+            url: 'images/ffp/FFP_submit.png',
             label: '',
             description: '',
-            alt: 'AEP page'
-          },
-      ,
-          {
-            url: 'images/aep/aep3.png',
-            label: '',
-            description: '',
-            alt: 'AEP mobile page'
-          },
-      ,
-          {
-            url: 'images/aep/aep4.png',
-            label: '',
-            description: '',
-            alt: 'AEP page'
-          }
-        ]
-      },
-    bazinga: {
-        title: 'BAZINGA!',
-        description: '',
-        images: [
-          {
-            url: 'images/bazinga/bazinga1.png',
-            label: '',
-            description: '',
-            alt: 'BAZINGA home page'
+            alt: 'submit fake profile page'
           },
           {
-            url: 'images/bazinga/bazinga2.png',
+            url: 'images/ffp/ffp_twitter.png',
             label: '',
-            description: '',
-            alt: 'BAZINGA page'
-          },
-      ,
-          {
-            url: 'images/bazinga/bazinga3.png',
-            label: '',
-            description: '',
-            alt: 'BAZINGA survey template'
-          },
-      ,
-          {
-            url: 'images/bazinga/bazinga4.png',
-            label: '',
-            description: '',
-            alt: 'BAZINGA email template'
-          }
-        ]
-      },
-      icilee: {
-        title: 'icilee.com',
-        description: '',
-        images: [
-          {
-            url: 'images/icilee/icilee_home_page.png',
-            label: '',
-            description: '',
-            alt: 'icilee home page'
+            description: 'reported profiles from Twitter page',
+            alt: ''
           },
           {
-            url: 'images/icilee/icilee_watches.png',
+            url: 'images/ffp/ffp_profile.png',
             label: '',
             description: '',
-            alt: 'icilee watches page'
-          },
-          {
-            url: 'images/icilee/icilee_sunglasses.png',
-            label: '',
-            description: '',
-            alt: 'icilee sunglasses page'
-          },
-          {
-            url: 'images/icilee/icilee_cart.png',
-            label: '',
-            description: '',
-            alt: 'icilee shopping cart page'
-          },
-          {
-            url: 'images/icilee/icilee_contact_page.png',
-            label: '',
-            description: '',
-            alt: 'icilee contact page'
+            alt: 'profile page'
           }
         ]
       },
@@ -211,6 +231,180 @@
           }
         ]
       },
+      icilee: {
+        title: 'icilee.com',
+        description: '',
+        images: [
+          {
+            url: 'images/icilee/icilee_home_page.png',
+            label: '',
+            description: '',
+            alt: 'icilee home page'
+          },
+          {
+            url: 'images/icilee/icilee_watches.png',
+            label: '',
+            description: '',
+            alt: 'icilee watches page'
+          },
+          {
+            url: 'images/icilee/icilee_sunglasses.png',
+            label: '',
+            description: '',
+            alt: 'icilee sunglasses page'
+          },
+          {
+            url: 'images/icilee/icilee_cart.png',
+            label: '',
+            description: '',
+            alt: 'icilee shopping cart page'
+          },
+          {
+            url: 'images/icilee/icilee_contact_page.png',
+            label: '',
+            description: '',
+            alt: 'icilee contact page'
+          }
+        ]
+      },
+      jcpenney: {
+        title: 'JCPenneyInsiders.com',
+        description: '',
+        images: [
+          {
+            url: 'images/jcpenney/jcpenney1.png',
+            label: '',
+            description: '',
+            alt: 'JCPenney home page'
+          },
+          {
+            url: 'images/jcpenney/jcpenney2.png',
+            label: '',
+            description: '',
+            alt: 'JCPenney points page'
+          }
+        ]
+      },
+      logicom: {
+        title: 'isitdown.logicom.center',
+        description: '',
+        images: [
+          {
+            url: 'images/logicom/login_page.png',
+            label: '',
+            description: '',
+            alt: 'Home page'
+          },
+          {
+            url: 'images/logicom/login_page_mobile.png',
+            label: '',
+            description: '',
+            alt: 'Home mobile page'
+          },
+          {
+            url: 'images/logicom/admin_utilities_dark.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/dashboard.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/dashboard_dark.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/dashboard_mobile_dark.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/uptime_ping.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/PriceBook.gif',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/Accounts_Manager.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/Accounts_Manager_add_customer.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/Accounts_Manager_customer.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/Bconfig_template_editor.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/uptime_mobile.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/Uptime_ping_log.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/edit_category.gif',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
+            url: 'images/logicom/recordings_table.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+        ]
+      },
+      mycleanmusic: {
+        title: 'MyCleanMusic.com',
+        description: '',
+        images: [
+          {
+            url: 'images/mycleanmusic/home_page.png',
+            label: '',
+            description: '',
+            alt: 'MyCleanMusic landing page'
+          },
+          {
+            url: 'images/mycleanmusic/songs_page.png',
+            label: '',
+            description: '',
+            alt: 'MyCleanMusic songs page'
+          }
+        ]
+      },
       text_app: {
         title: 'Text Message Web App',
         description: '',
@@ -220,48 +414,6 @@
             label: '',
             description: '',
             alt: 'chat app main page'
-          }
-        ]
-      },
-      FFP: {
-        title: 'FindFakeProfiles.com',
-        description: '',
-        images: [
-          {
-            url: 'images/ffp/FFP_home3.png',
-            label: '',
-            description: '',
-            alt: 'home page'
-          },
-          {
-            url: 'images/ffp/ffp_david.png',
-            label: '',
-            description: '',
-            alt: 'reported profile page'
-          },
-          {
-            url: 'images/ffp/ffp_comments.png',
-            label: '',
-            description: '',
-            alt: 'post comments'
-          },
-          {
-            url: 'images/ffp/FFP_submit.png',
-            label: '',
-            description: '',
-            alt: 'submit fake profile page'
-          },
-          {
-            url: 'images/ffp/ffp_twitter.png',
-            label: '',
-            description: 'reported profiles from Twitter page',
-            alt: ''
-          },
-          {
-            url: 'images/ffp/ffp_profile.png',
-            label: '',
-            description: '',
-            alt: 'profile page'
           }
         ]
       },
@@ -322,60 +474,6 @@
             label: '',
             description: '',
             alt: 'Video game portfolio image 3'
-          }
-        ]
-      },
-      citybizbeats: {
-        title: 'CityBizBeats.com',
-        description: '',
-        images: [
-          {
-            url: 'images/citybizbeats/home.png',
-            label: '',
-            description: '',
-            alt: 'Home page'
-          },
-          {
-            url: 'images/citybizbeats/tracklist.png',
-            label: '',
-            description: '',
-            alt: 'Home page tracklist'
-          },
-          {
-            url: 'images/citybizbeats/checkout.png',
-            label: '',
-            description: '',
-            alt: 'Checkout page'
-          },
-          {
-            url: 'images/citybizbeats/lease.png',
-            label: '',
-            description: '',
-            alt: 'Lease page'
-          }
-        ]
-      },
-      checkers: {
-        title: 'ReactJS Checkers',
-        description: '',
-        images: [
-          {
-            url: 'images/react_js_checkers/menu.png',
-            label: '',
-            description: '',
-            alt: 'Main Menu'
-          },
-          {
-            url: 'images/react_js_checkers/gameplay1.png',
-            label: '',
-            description: '',
-            alt: 'Gameplay 1'
-          },
-          {
-            url: 'images/react_js_checkers/gameplay2.png',
-            label: '',
-            description: '',
-            alt: 'Gameplay 2'
           }
         ]
       },
