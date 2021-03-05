@@ -120,6 +120,9 @@ section h1{
 #projects .card-body{
   height: 241px;
 }
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  filter: brightness(0.5);
+}
 
 #education{
    position: relative;

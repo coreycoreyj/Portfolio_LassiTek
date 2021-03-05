@@ -326,7 +326,7 @@
             alt: 'Admin menu page'
           },
           {
-            url: 'images/logicom/uptime_ping.png',
+            url: 'images/logicom/Uptime_ping.png',
             label: '',
             description: '',
             alt: 'Admin menu page'
@@ -362,7 +362,7 @@
             alt: 'Admin menu page'
           },
           {
-            url: 'images/logicom/uptime_mobile.png',
+            url: 'images/logicom/Uptime_mobile.png',
             label: '',
             description: '',
             alt: 'Admin menu page'
