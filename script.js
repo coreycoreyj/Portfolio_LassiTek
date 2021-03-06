@@ -123,6 +123,54 @@
           }
         ]
       },
+      codemecorrect_courses: {
+        title: 'Courses dashboard - CodeMeCorrect.com',
+        description: '',
+        images: [
+          {
+            url: 'images/codemecorrect_courses/charts_page_1.png',
+            label: '',
+            description: '',
+            alt: 'Chart page 1'
+          },
+          {
+            url: 'images/codemecorrect_courses/dashboard_preview.gif',
+            label: '',
+            description: '',
+            alt: 'Dashboard Demo'
+          },
+          {
+            url: 'images/codemecorrect_courses/charts_page_2.png',
+            label: '',
+            description: '',
+            alt: 'Chart page 1'
+          }
+        ]
+      },
+      dododelivery: {
+        title: 'Dodo Delivery Wordpress site',
+        description: '',
+        images: [
+          {
+            url: 'images/dododelivery/demo.gif',
+            label: '',
+            description: '',
+            alt: 'Demo'
+          }
+        ]
+      },
+      earnguard_plaid: {
+        title: 'Plaid Integration',
+        description: '',
+        images: [
+          {
+            url: 'images/earnguard_plaid/plaid_demo.gif',
+            label: '',
+            description: '',
+            alt: 'plaid demo'
+          }
+        ]
+      },
       entergypluggedin: {
         title: 'EntergyPluggedIn.com',
         description: '',
@@ -231,6 +279,18 @@
           }
         ]
       },
+      gsap_helix: {
+        title: 'Helix animation using GSAP',
+        description: '',
+        images: [
+          {
+            url: 'images/gsap_helix/helix_demo.gif',
+            label: '',
+            description: '',
+            alt: 'helix animation'
+          }
+        ]
+      },
       icilee: {
         title: 'icilee.com',
         description: '',
@@ -308,6 +368,12 @@
             alt: 'Admin menu page'
           },
           {
+            url: 'images/logicom/Accounts_Manager.png',
+            label: '',
+            description: '',
+            alt: 'Admin menu page'
+          },
+          {
             url: 'images/logicom/dashboard.png',
             label: '',
             description: '',
@@ -333,12 +399,6 @@
           },
           {
             url: 'images/logicom/PriceBook.gif',
-            label: '',
-            description: '',
-            alt: 'Admin menu page'
-          },
-          {
-            url: 'images/logicom/Accounts_Manager.png',
             label: '',
             description: '',
             alt: 'Admin menu page'
@@ -450,6 +510,18 @@
             label: '',
             description: '',
             alt: 'tile tanks gameplay'
+          }
+        ]
+      },
+      travelistic: {
+        title: 'Travelistic - Landing Page',
+        description: '',
+        images: [
+          {
+            url: 'images/travelistic/home2.gif',
+            label: '',
+            description: '',
+            alt: 'Landing page'
           }
         ]
       },
