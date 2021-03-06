@@ -746,7 +746,7 @@
       }
   
       // projects
-      if(window.scrollY >= (section_projects.offsetTop - (section_projects.clientHeight / 2)) && section_projects.getAttribute('data-activated') === 'false'){
+      if(window.scrollY >= (section_projects.offsetTop - 200) && section_projects.getAttribute('data-activated') === 'false'){
         anime({
           targets: '#projects .card',
           opacity: 1,
