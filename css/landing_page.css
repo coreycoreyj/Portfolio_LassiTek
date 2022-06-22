@@ -1,0 +1,100 @@
+#landingPage{
+    background: #000;
+}
+#landingPage .navbar{
+    background: linear-gradient(to bottom right,  #343A40 , #000);
+}
+
+#landingPage .navbar-brand {
+    margin: 0px;
+}
+.navbar.fixed-top.scroll {
+    height: 50px;
+    transition: all 0.5s;
+}
+#landingPage .navbar-nav {
+    gap: 40px;
+}
+#landingPage #menuRight button {
+    background-color: #59517A;
+    font-size: 16px;
+    border-color: #40395e;
+    border-radius: 50px;
+}
+
+#landingPage #videoHero {
+    opacity: 0;
+}
+#landingPage #videoHero video {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+#landingPage .modal {
+    overflow-y: hidden;
+}
+#landingPage .modal-header {
+    color: white;
+    border-bottom: none;
+    margin-top: 20px;
+}
+#landingPage .modal-content {
+    background-color: transparent;
+}
+#landingPage #contactForm {
+    background: linear-gradient(to bottom right,  #343A40 , #000);
+    border: 1px solid #292c2f;
+}
+#landingPage .form-control:not(#submit), 
+#landingPage .form-control:focus {
+    color: #c7c7c7;
+    background: transparent;
+    border-color: #767a7e;
+}
+#landingPage #submit {
+    border-color: #000;
+}
+#landingPage .modal .close {
+    color: #fff;
+    position: absolute;
+    right: 0;
+}
+#landingPage section {
+    padding-bottom: 0;
+    min-height: auto;
+}
+#landingPage .modal-footer {
+    border-top: none;
+}
+#landingPage .modal-footer button {
+    border-top: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    #landingPage .navbar > *{
+        flex: 1 1 1px;
+    }
+    #landingPage #mainMenu {
+        flex-grow: 10;
+    }
+
+ }
+
+ /* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    #menuRight {
+        display: none;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) { 
+
+}
